@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REO: Manejo de Sesgos en Salidas de IA (DUA)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de accesibilidad DUA -->
+  <header role="banner">
+    <h1>REO: Detección y Manejo de Sesgos en la IA</h1>
+    <div class="toolbar" aria-label="Herramientas de accesibilidad">
+      <button id="btn-contrast" aria-label="Alternar alto contraste">Alto Contraste</button>
+      <button id="btn-text-size" aria-label="Aumentar tamaño de letra">Aumentar Texto</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- Principio DUA 1: Múltiples formas de Representación -->
+    <section class="card" aria-labelledby="sec-intro">
+      <h2 id="sec-intro">1. ¿Qué es el Sesgo en las Salidas de IA?</h2>
+      <p>
+        Las herramientas de IA generativa aprenden de enormes volúmenes de datos creados por humanos. Si esos datos contienen estereotipos, inequidades o vacíos de información, la IA **reproducirá y amplificará esos sesgos** en sus respuestas.
+      </p>
+      <div class="callout-box" role="note">
+        <strong>💡 Idea Clave:</strong> La IA no "piensa", solo predice patrones basándose en su entrenamiento.
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="sec-tipos">
+      <h2 id="sec-tipos">2. Tipos de Sesgos Frecuentes</h2>
+      <ul class="bias-list">
+        <li>
+          <strong>Sesgo de Representación:</strong> Ocurre cuando un grupo demográfico está subrepresentado o invisibilizado en las respuestas.
+        </li>
+        <li>
+          <strong>Sesgo Estereotípico:</strong> Asigna roles tradicionales de género, raza o estatus socioeconómico (ej. asume géneros en profesiones).
+        </li>
+        <li>
+          <strong>Sesgo de Confirmación:</strong> La IA adapta su respuesta para darnos la razón, validando ideas erróneas de la consulta.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Principio DUA 2: Múltiples formas de Acción y Expresión -->
+    <section class="card" aria-labelledby="sec-simulador">
+      <h2 id="sec-simulador">3. Laboratorio Interactivo: Detecta el Sesgo</h2>
+      <p>Analiza el siguiente caso simulado e identifica la falencia en la respuesta generada por la IA:</p>
+      
+      <div class="prompt-case">
+        <p><strong>Consulta realizada a la IA:</strong> <em>"Escribe una historia sobre dos profesionales de la medicina resolviendo una emergencia."</em></p>
+        <p><strong>Respuesta generada por IA:</strong> <em>"El Dr. Ramírez analizó los análisis rápidamente mientras la enfermera Laura tomaba las constantes vitales del paciente..."</em></p>
+      </div>
+
+      <form id="quiz-form">
+        <fieldset>
+          <legend><strong>¿Qué tipo de sesgo presenta la respuesta?</strong></legend>
+          <label>
+            <input type="radio" name="bias-option" value="incorrect1"> Sesgo de confirmación por validar la pregunta.
+          </label>
+          <label>
+            <input type="radio" name="bias-option" value="correct"> Sesgo estereotípico de género al asumir el rol de cada profesional.
+          </label>
+          <label>
+            <input type="radio" name="bias-option" value="incorrect2"> No presenta ningún sesgo.
+          </label>
+        </fieldset>
+        <button type="button" id="btn-check-answer">Verificar Respuesta</button>
+      </form>
+      <div id="feedback" class="feedback-box" hidden aria-live="polite"></div>
+    </section>
+
+    <!-- Principio DUA 3: Múltiples formas de Implicación / Motivación -->
+    <section class="card" aria-labelledby="sec-estrategias">
+      <h2 id="sec-estrategias">4. Estrategias de Mitigación</h2>
+      <p>Sigue la regla **P.E.R.** para auditar respuestas de IA:</p>
+      <ol>
+        <li><strong>Precisión:</strong> Contrasta la información con fuentes secundarias confiables.</li>
+        <li><strong>Equidad:</strong> Revisa si la respuesta asume roles o excluye perspectivas.</li>
+        <li><strong>Re-prompting:</strong> Pide explícitamente a la IA incluir perspectivas diversas o neutras.</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Recurso Educativo Abierto (REA) bajo licencia CC BY 4.0 | Diseñado con Enfoque DUA y Criterios WCAG</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
